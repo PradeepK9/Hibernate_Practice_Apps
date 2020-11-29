@@ -32,10 +32,10 @@ public class SaveObjectTest {
 
 		// create Entity object to save with Db s/w
 		prod = new Product();
-		prod.setPid(105);
-		prod.setPname("pen");
-		prod.setPrice(1000.25f);
-		prod.setQty(10);
+		prod.setPid(102);
+		prod.setPname("fan");
+		prod.setPrice(10000.25f);
+		prod.setQty(4);
 		try {
 			tx = ses.beginTransaction(); // internally calls con.setAutoCommit(false) to begin the Tx
 			// save object
@@ -48,7 +48,7 @@ public class SaveObjectTest {
 			// commit or rollback Tx
 			if (flag == true) {
 				tx.commit(); // internally calls con.commit()
-				System.out.println("Object is saved");
+				System.out.println("Object is saved successfully..");
 			} else {
 				tx.rollback(); // internally calls con.rollback()
 				System.out.println("Object is not saved");
